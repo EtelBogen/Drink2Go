@@ -1,19 +1,11 @@
-# Типовая вёрстка «Барбершопа» для 2 уровня вёрстки
+# Личный проект Drink2Go
 
-## Разработка
+* Студент: [Tatyana Novoseltseva](https://up.htmlacademy.ru/adaptive/24/user/555).
 
-- Зайти в [final](final): `cd final`
-- Установить зависимости: `npm install`
-- Запустить сервер: `npm start`
+Личный проект для грейдирования на практическом этапе профессии «Фронтенд-разработчик #11»
 
 ## Тестирование
 
 - Запуск: `npm lint`
 
 Тестирует Stylelint и EditorConfig.
-
-## Сборка
-
-- Зайти в [final](final): `cd final`
-- Собрать стили: `npm run styles`
-- Собрать скрипты: `npm run scripts`
