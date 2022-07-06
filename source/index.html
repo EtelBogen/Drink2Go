@@ -15,18 +15,167 @@
     <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png"> <!-- 180×180 -->
     <link rel="manifest" href="manifest.webmanifest">
   </head>
-  <body class="page__body">
-    <header class="page-header page-header--index">
-      <nav class="page-header__navigation">
 
+  <body class="page__body">
+
+    <header class="page-header page-header--index">
+      <nav class="page-header__navigation main-navigation">
+        <a class="main-navigation__logo logo" href="index.html">
+          <span class="visually-hidden">Главная страница сайта интернет-магазина кофейных напитков Drink2Go.</span>
+          <svg class="logo__header logo__header--min" width="32" height="36">
+            <use href=""></use>
+          </svg>
+          <svg class="logo__header logo__header--mid" width="82" height="36">
+            <use href=""></use>
+          </svg>
+          <svg class="logo__header logo__header--max" width="170" height="36">
+            <use href=""></use>
+          </svg>
+        </a>
+        <h1 class="main-navigation__description">Интернет-магазин кофейных напитков</h1>
+        <ul class="main-navigation__list site-list">
+          <li class="site-list__item site-list__item--active">
+            <a class="site-list__href">Главная</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__href" href="#">Каталог</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__href" href="#">Доставка</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__href" href="#">О нас</a>
+          </li>
+        </ul>
+        <ul class="main-navigation__list user-list">
+          <li class="user-list__item">
+            <a class="user-list__login" href="">Войти</a>
+          </li>
+          <li class="user-list__item">
+            <a class="user-list__basket" href="">Корзина</a>
+          </li>
+        </ul>
+        <button class="main-navigation__toggle main-navigation__toggle--open" type="button">
+          <span class="visually-hidden">Меню.</span>
+          <svg class="main-navigation__icon main-navigation__icon--burger" width="16" height="16">
+            <use href=""></use>
+          </svg>
+          <svg class="main-navigation__icon main-navigation__icon--cross" width="16" height="16">
+            <use href=""></use>
+          </svg>
+        </button>
       </nav>
     </header>
 
     <main class="page-main">
+      <section class="new-products">
+
+      </section>
+
+      <section class="advantages">
+
+      </section>
+
+      <section class="catalog">
+
+      </section>
 
     </main>
 
     <footer class="page-footer">
+      <div class="page-footer__map"></div>
+      <nav class="page-footer__navigation footer-navigation">
+        <a class="footer-navigation__logo logo">
+          <span class="visually-hidden">Главная страница сайта интернет-магазина кофейных напитков Drink2Go.</span>
+          <svg class="logo__footer logo__footer--mid" width="82" height="36">
+            <use href=""></use>
+          </svg>
+          <svg class="logo__footer logo__footer--max" width="170" height="36">
+            <use href=""></use>
+          </svg>
+        </a>
+        <ul class="footer-navigation__socials socials-list">
+          <li class="socials-list__item socials-list__item--vk">
+            <a class="socials-list__href" href="#">
+              <svg class="socials-list__icon socials-list__icon--vk" width="20" height="20">
+                <use href=""></use>
+              </svg>
+              <span class="visually-hidden">Перейти на страницу "ВКонтакте" интернет-магазина Drink2Go.</span>
+            </a>
+          </li>
+          <li class="socials-list__item socials-list__item--pinterest">
+            <a class="socials-list__href" href="#">
+              <svg class="socials-list__icon socials-list__icon--pinterest" width="22" height="22">
+                <use href=""></use>
+              </svg>
+              <span class="visually-hidden">Перейти в Pinterest интернет-магазина Drink2Go.</span>
+            </a>
+          </li>
+          <li class="socials-list__item socials-list__item--OK">
+            <a class="socials-list__href" href="#">
+              <svg class="socials-list__icon socials-list__icon--OK" width="20" height="20">
+                <use href=""></use>
+              </svg>
+              <span class="visually-hidden">Перейти на страницу "Одноклассники" интернет-магазина Drink2Go.</span>
+            </a>
+          </li>
+        </ul>
+        <div class="footer-navigation__online-store">
+          <h2 class="footer-navigation__header">Интернет-магазин</h2>
+          <ul class="footer-navigation__list online-store-list">
+            <li class="online-store-list__item">
+              <a class="online-store-list__href" href="#">Каталог</a>
+            </li>
+            <li class="online-store-list__item">
+              <a class="online-store-list__href" href="#">Доставка</a>
+            </li>
+            <li class="online-store-list__item">
+              <a class="online-store-list__href" href="#">Способы оплаты</a>
+            </li>
+            <li class="online-store-list__item">
+              <a class="online-store-list__href" href="#">О нас</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-navigation__media">
+          <h2 class="footer-navigation__header">Медиа</h2>
+          <ul class="footer-navigation__list media-list">
+            <li class="media-list__item">
+              <a class="media-list__href" href="#">Блог</a>
+            </li>
+            <li class="media-list__item">
+              <a class="media-list__href" href="#">Информация для СМИ</a>
+            </li>
+            <li class="media-list__item">
+              <a class="media-list__href" href="#">Правовая информация</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-navigation__contacts">
+          <h2 class="footer-navigation__header">Контакты</h2>
+          <ul class="footer-navigation__list contacts-list">
+            <li class="contacts-list__item contacts-list__item--address">
+              <p class="contacts-list__text">
+                Санкт-Петербург, набережная реки Карповки, дом 5
+              </p>
+            </li>
+            <li class="contacts-list__item contacts-list__item--phone">
+              <p class="contacts-list__text">
+                <a class="contacts-list__link" href="tel:+79999999999">+7 (999) 999-99-99</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="page-footer__copyrights copyrights">
+        <p class="copyrights__text">Разработано HTML Academy</p>
+        <a class="copyrights__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
+          <span class="visually-hidden">логотип сайта HTML Academy.</span>
+          <svg class="copyrights__htmlacademy" width="12" height="16">
+            <use href=""></use>
+          </svg>
+        </a>
+      </div>
 
     </footer>
 
