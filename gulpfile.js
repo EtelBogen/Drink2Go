@@ -28,7 +28,6 @@ export const styles = () => {
     .pipe(browser.stream());
 }
 
-
 // HTML
 
 const html = () => {
@@ -39,7 +38,7 @@ const html = () => {
 // Scripts
 
 const scripts = () => {
-  return gulp.src('source/js/script.js')
+  return gulp.src('source/js/*.js')
     .pipe(gulp.dest('build/js'))
     .pipe(browser.stream());
 }
@@ -70,9 +69,14 @@ const createWebp = () => {
 // SVG
 
 const svg = () =>
-  gulp.src(['source/img/*.svg', '!source/img/svg/*.svg'])
+  gulp.src(['source/img/*.svg', '!source/img/svg/*.svg', '!source/img/favicons/*.svg'])
     .pipe(svgo())
     .pipe(gulp.dest('build/img/svg'));
+
+const favicon = () =>
+  gulp.src(['source/img/favicons/*.svg'])
+    .pipe(svgo())
+    .pipe(gulp.dest('build/img/favicons'));
 
 const sprite = () => {
   return gulp.src('source/img/svg/*.svg')
@@ -89,6 +93,7 @@ const sprite = () => {
 const copy = (done) => {
   gulp.src([
     'source/fonts/*.{woff2,woff}',
+    'source/library/**/*.{css,js}',
     'source/*.ico', 'source/manifest.webmanifest',
   ], {
     base: 'source'
@@ -129,7 +134,7 @@ const reload = (done) => {
 
 const watcher = () => {
   gulp.watch('source/less/**/*.less', gulp.series(styles));
-  gulp.watch('source/js/script.js', gulp.series(scripts));
+  gulp.watch('source/js/*.js', gulp.series(scripts));
   gulp.watch('source/*.html', gulp.series(html, reload));
 }
 
@@ -144,6 +149,7 @@ export const build = gulp.series(
     html,
     scripts,
     svg,
+    favicon,
     sprite,
     createWebp
   ),
@@ -161,6 +167,7 @@ export default gulp.series(
     html,
     scripts,
     svg,
+    favicon,
     sprite,
     createWebp
   ),

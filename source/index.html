@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>Интернет-магазин кофейных напитков Drink2Go</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="preload" href="fonts/montserrat-regular.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="fonts/montserrat-medium.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="fonts/montserrat-semibold.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="fonts/montserrat-bold.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="fonts/montserrat-extrabold.woff2" as="font" crossorigin="anonymous">
-    <link href="css/style.min.css" rel="stylesheet">
+    <link rel="preload" href="fonts/montserrat-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-extrabold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="library/leaflet/leaflet.css">
     <link rel="icon" href="favicon.ico" sizes="any"> <!-- 32×32 -->
     <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png"> <!-- 180×180 -->
@@ -31,33 +32,45 @@
       <nav class="page-header__navigation main-navigation">
         <ul class="main-navigation__list site-list list-reset">
           <li class="site-list__item site-list__item--active">
-            <a class="site-list__href">Главная</a>
+            <a class="site-list__href">
+              Главная
+            </a>
           </li>
           <li class="site-list__item">
-            <a class="site-list__href" href="#">Каталог</a>
+            <a class="site-list__href" href="#">
+              Каталог
+            </a>
           </li>
           <li class="site-list__item">
-            <a class="site-list__href" href="#">Доставка</a>
+            <a class="site-list__href" href="#"
+            >Доставка
+          </a>
           </li>
           <li class="site-list__item">
-            <a class="site-list__href" href="#">О нас</a>
+            <a class="site-list__href" href="#">
+              О нас
+            </a>
           </li>
         </ul>
         <ul class="main-navigation__list user-list list-reset">
           <li class="user-list__item">
-            <a class="user-list__login" href="">Войти</a>
+            <a class="user-list__login" href="">
+              Войти
+            </a>
           </li>
           <li class="user-list__item">
-            <a class="user-list__basket" href="">Корзина</a>
+            <a class="user-list__basket" href="">
+              Корзина
+            </a>
           </li>
         </ul>
         <button class="main-navigation__toggle main-navigation__toggle--open" type="button">
           <span class="visually-hidden">Меню.</span>
           <svg class="main-navigation__icon main-navigation__icon--burger" width="16" height="16">
-            <use href=""></use>
+            <use href="img/sprite.svg#menu-burger"></use>
           </svg>
           <svg class="main-navigation__icon main-navigation__icon--cross" width="16" height="16">
-            <use href=""></use>
+            <use href="img/sprite.svg#menu-cross"></use>
           </svg>
         </button>
       </nav>
@@ -158,8 +171,18 @@
           <div class="swiper-pagination-custom slider__pagination"></div>
 
           <!-- Navigation buttons -->
-          <div class="swiper-button-prev slider__navigation slider__navigation--prev"></div>
-          <div class="swiper-button-next slider__navigation slider__navigation--next"></div>
+          <div class="swiper-button-prev slider__navigation slider__navigation--prev">
+            <svg class="reviews__arrow" width="20" height="20">
+              <use href="img/sprite.svg#slider-arrow-left"></use>
+            </svg>
+            <span class="visually-hidden">Предыдущий отзыв</span>
+          </div>
+          <div class="swiper-button-next slider__navigation slider__navigation--next">
+            <svg class="reviews__arrow" width="20" height="20">
+              <use href="img/sprite.svg#slider-arrow-right"></use>
+            </svg>
+            <span class="visually-hidden">Следующий отзыв</span>
+          </div>
         </div>
       </section>
 
@@ -229,15 +252,15 @@
                 <label class="filters-form__label" for="input-not-matter">Неважно</label>
               </li>
               <li class="filters-form__item filters-form__item--radio">
-                <input class="filters-form__input filters-form__input--radio visually-hidden" type="radio" name="milk-type" id="input-animal-milk" value="not-matter" checked>
+                <input class="filters-form__input filters-form__input--radio visually-hidden" type="radio" name="milk-type" id="input-animal-milk" value="not-matter">
                 <label class="filters-form__label" for="input-animal-milk">Только животное</label>
               </li>
               <li class="filters-form__item filters-form__item--radio">
-                <input class="filters-form__input filters-form__input--radio visually-hidden" type="radio" name="milk-type" id="input-plant-milk" value="not-matter" checked>
+                <input class="filters-form__input filters-form__input--radio visually-hidden" type="radio" name="milk-type" id="input-plant-milk" value="not-matter">
                 <label class="filters-form__label" for="input-plant-milk">Только растительное</label>
               </li>
               <li class="filters-form__item filters-form__item--radio">
-                <input class="filters-form__input filters-form__input--radio visually-hidden" type="radio" name="milk-type" id="input-without-milk" value="not-matter" checked>
+                <input class="filters-form__input filters-form__input--radio visually-hidden" type="radio" name="milk-type" id="input-without-milk" value="not-matter" disabled>
                 <label class="filters-form__label" for="input-without-milk">Без молока</label>
               </li>
             </ul>
@@ -251,19 +274,19 @@
                 <label for="input-brasil">Бразилия</label>
               </li>
               <li class="filters-form__item filters-form__item--checkbox">
-                <input class="filters-form__input filters-form__input--checkbox visually-hidden" type="checkbox" name="origin-country" id="input-ethiopia" value="Ethiopia" checked>
+                <input class="filters-form__input filters-form__input--checkbox visually-hidden" type="checkbox" name="origin-country" id="input-ethiopia" value="Ethiopia">
                 <label for="input-ethiopia">Эфиопия</label>
               </li>
               <li class="filters-form__item filters-form__item--checkbox">
-                <input class="filters-form__input filters-form__input--checkbox visually-hidden" type="checkbox" name="origin-country" id="input-colombia" value="Colombia" checked>
+                <input class="filters-form__input filters-form__input--checkbox visually-hidden" type="checkbox" name="origin-country" id="input-colombia" value="Colombia">
                 <label for="input-colombia">Колумбия</label>
               </li>
               <li class="filters-form__item filters-form__item--checkbox">
-                <input class="filters-form__input filters-form__input--checkbox visually-hidden" type="checkbox" name="origin-country" id="input-costa-rica" value="Costa-Rica" checked>
+                <input class="filters-form__input filters-form__input--checkbox visually-hidden" type="checkbox" name="origin-country" id="input-costa-rica" value="Costa-Rica">
                 <label for="input-costa-rica">Коста-Рика</label>
               </li>
               <li class="filters-form__item filters-form__item--checkbox">
-                <input class="filters-form__input filters-form__input--checkbox visually-hidden" type="checkbox" name="origin-country" id="input-peru" value="Peru" checked>
+                <input class="filters-form__input filters-form__input--checkbox visually-hidden" type="checkbox" name="origin-country" id="input-peru" value="Peru" disabled>
                 <label for="input-peru">Перу</label>
               </li>
             </ul>
@@ -369,15 +392,63 @@
               <button class="catalog-card__button button button--catalog" type="button">В корзину</button>
             </div>
           </li>
-
         </ul>
+
+        <nav class="catalog__pagination catalog-pagination">
+          <ul class="catalog-pagination__list list-reset">
+            <li class="catalog-pagination__item">
+              <a class="catalog-pagination__link catalog-pagination__link--icon button button--pagination" href="#">
+                <svg class="catalog-pagination__icon" width="10" height="10" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/sprite.svg#pagination-arrow-left"></use>
+                </svg>
+                <span class="catalog-pagination__text">Назад</span>
+              </a>
+            </li>
+            <li class="catalog-pagination__item">
+              <a class="catalog-pagination__link button button--pagination" href="#">
+                1
+              </a>
+            </li>
+            <li class="catalog-pagination__item">
+              <a class="catalog-pagination__link catalog-pagination__link--current button button--pagination" href="#">
+                2
+              </a>
+            </li>
+            <li class="catalog-pagination__item">
+              <a class="catalog-pagination__link button button--pagination" href="#">
+                3
+              </a>
+            </li>
+            <li class="catalog-pagination__item">
+              <a class="catalog-pagination__link catalog-pagination__link--icon button button--pagination" href="#">
+                <svg class="catalog-pagination__icon" width="10" height="10" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/sprite.svg#pagination-arrow-right"></use>
+                </svg>
+                <span class="catalog-pagination__text">Вперед</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </section>
     </main>
 
     <footer class="page-footer">
       <section class="page-footer__map map">
-        <h2 class="visually-hidden">Карта, где обозначено местонахождение магазина.</h2>
-        <!-- Тут будет карта -->
+        <h2 class="visually-hidden">Карта, где обозначено местонахождение магазина Drink2Go.</h2>
+        <div class="map__wrapper">
+          <div class="map__canvas map__canvas--nojs" id="map-canvas" style="width: 640px; height: 480px;"></div>
+          <!--
+          <picture>
+            <source type="image/webp" media="(min-width: 1440px)" srcset="img/jpg/map-desktop@1x.webp 1x, img/jpg/map-desktop@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)" srcset="img/jpg/map-tablet@1x.webp 1x, img/jpg/map-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/jpg/map-mobile@1x.webp 1x, img/jpg/map-mobile@2x.webp 2x">
+            <source media="(min-width: 1440px)" srcset="img/jpg/map-desktop@1x.jpg 1x, img/jpg/map-desktop@2x.jpg 2x">
+            <source media="(min-width: 768px)" srcset="img/jpg/map-tablet@1x.jpg 1x, img/jpg/map-tablet@2x.jpg 2x">
+            <img class="map__image map__image--nojs" src="img/jpg/map-mobile@1x.jpg" srcset="img/jpg/map-mobile@2x.jpg 2x" alt="Карта с меткой местонахождения магазина Drink2Go.">
+          </picture>
+                    -->
+        </div>
+
       </section>
 
       <section class="page-footer__socials socials">
@@ -424,16 +495,24 @@
           <h2 class="footer-navigation__header">Интернет-магазин</h2>
           <ul class="footer-navigation__list online-store-list list-reset">
             <li class="online-store-list__item">
-              <a class="online-store-list__href" href="#">Каталог</a>
+              <a class="online-store-list__href" href="#">
+                Каталог
+              </a>
             </li>
             <li class="online-store-list__item">
-              <a class="online-store-list__href" href="#">Доставка</a>
+              <a class="online-store-list__href" href="#">
+                Доставка
+              </a>
             </li>
             <li class="online-store-list__item">
-              <a class="online-store-list__href" href="#">Способы оплаты</a>
+              <a class="online-store-list__href" href="#">
+                Способы оплаты
+              </a>
             </li>
             <li class="online-store-list__item">
-              <a class="online-store-list__href" href="#">О нас</a>
+              <a class="online-store-list__href" href="#">
+                О нас
+              </a>
             </li>
           </ul>
         </div>
@@ -441,19 +520,25 @@
           <h2 class="footer-navigation__header">Медиа</h2>
           <ul class="footer-navigation__list media-list list-reset">
             <li class="media-list__item">
-              <a class="media-list__href" href="#">Блог</a>
+              <a class="media-list__href" href="#">
+                Блог
+              </a>
             </li>
             <li class="media-list__item">
-              <a class="media-list__href" href="#">Информация для СМИ</a>
+              <a class="media-list__href" href="#">
+                Информация для СМИ
+              </a>
             </li>
             <li class="media-list__item">
-              <a class="media-list__href" href="#">Правовая информация</a>
+              <a class="media-list__href" href="#">
+                Правовая информация
+              </a>
             </li>
           </ul>
         </div>
         <div class="footer-navigation__contacts">
           <h2 class="footer-navigation__header">Контакты</h2>
-          <ul class="footer-navigation__list contacts-list">
+          <ul class="footer-navigation__list contacts-list list-reset">
             <li class="contacts-list__item contacts-list__item--address">
               <p class="contacts-list__text">
                 Санкт-Петербург, набережная реки Карповки, дом 5
@@ -461,7 +546,9 @@
             </li>
             <li class="contacts-list__item contacts-list__item--phone">
               <p class="contacts-list__text">
-                <a class="contacts-list__link" href="tel:+79999999999">+7 (999) 999-99-99</a>
+                <a class="contacts-list__link" href="tel:+79999999999">
+                  +7 (999) 999-99-99
+                </a>
               </p>
             </li>
           </ul>
@@ -478,6 +565,7 @@
         </a>
       </div>
     </footer>
-
+    <script src="library/leaflet/leaflet.js"></script>
+    <script src="js/map.js"></script>
   </body>
 </html>
