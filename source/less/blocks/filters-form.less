@@ -1,0 +1,342 @@
+.filters-form {
+  @media (min-width: @tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 40px;
+  }
+
+  @media (min-width: @desktop-width) {
+    display: block;
+  }
+}
+.filters-form__fieldset {
+  margin: 0 0 25px 0;
+  padding: 0;
+  border: none;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 31px;
+  }
+}
+
+.filters-form__legend {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 20px;
+  padding: 0;
+
+  &--price {
+    margin-bottom: 18px;
+  }
+}
+
+.filters-form__range-filter {
+  margin: 0 0 21px 0;
+  position: relative;
+  width: 100%;
+  height: 26px;
+}
+
+.filters-form__scale {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: @light-grey;
+
+  &--disabled div {
+    pointer-events: none;
+    background-color: @base-grey;
+  }
+
+  &--disabled .filters-form__range-toggle {
+    border: 2px solid @base-grey;
+    background-color: @light-grey;
+  }
+}
+
+.filters-form__bar {
+  position: absolute;
+  width: 93%;
+  height: 4px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: @primary-lighter;
+}
+
+.filters-form__range-toggle {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid @primary-lighter;
+  background-color: @base-white;
+  cursor: pointer;
+
+  &--max {
+    position: absolute;
+    top: 50%;
+    left: auto;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  &:hover::before,
+  &:focus::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: @primary-opacity-025;
+  }
+
+  &:active::before {
+    background-color: @base-primary;
+  }
+
+}
+
+.filters-form__price-controls {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+ .filters-form__price-input {
+  width: 125px;
+  font-family: @font-family-main;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  padding: 6px 10px;
+  border: 2px solid @primary-lighter;
+  border-radius: 4px;
+  color: @base-black;
+  outline-color: @primary-lighter;
+
+  &::placeholder {
+    color: @base-grey;
+  }
+
+  &:hover,
+  &:focus {
+    border: 2px solid @primary-darker;
+  }
+
+  &:disabled {
+    border-color: @light-grey;
+    background-color: transparent;
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 96px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 136px;
+  }
+ }
+
+ .filters-form__input-dash {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  color: @base-grey;
+  margin: auto 0;
+ }
+
+.filters-form__item {
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.filters-form__input {
+  &--radio + label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-left: 34px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      background-color: @base-white;
+      border: 2px solid @base-grey;
+      border-radius: 50%;
+    }
+
+    &::after {
+      position: absolute;
+      left: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background-color: @primary-opacity-025;
+      border-radius: 50%;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      content: "";
+    }
+  }
+
+  &--radio:checked + label {
+    &::before {
+      border: 2px solid @base-primary;
+    }
+
+    &::after {
+      content: "";
+      background-color: @base-primary;
+    }
+  }
+
+  &--radio:disabled + label {
+    color: @base-grey;
+    pointer-events: none;
+
+    &::before {
+      background-color: transparent;
+      border: 2px solid @light-grey;
+    }
+
+    &::after {
+      content: none;
+    }
+  }
+
+  &--radio:disabled:checked + label {
+    color: @base-grey;
+    pointer-events: none;
+
+    &::before {
+      border: 2px solid @light-grey;
+    }
+
+    &::after {
+      content: "";
+      background-color: @light-grey;
+    }
+  }
+}
+
+.filters-form__input {
+  &--checkbox + label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-left: 52px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 24px;
+      background-color: @base-grey;
+      border-radius: 12px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background-color: @base-white;
+      border-radius: 50%;
+    }
+
+    &:hover::before,
+    &:focus::before {
+      border: 2px solid @primary-lighter;
+      background-color: @primary-opacity-025;
+    }
+  }
+
+  &--checkbox:checked + label {
+    &::before {
+      background-color: @base-primary;
+      border: 2px solid @base-primary;
+    }
+
+    &::after {
+      left: 20px;
+    }
+  }
+
+  &--checkbox:disabled + label {
+    color: @base-grey;
+    pointer-events: none;
+
+    &::before {
+      background-color: @light-grey;
+    }
+  }
+
+  &--checkbox:disabled:checked + label {
+    color: @base-grey;
+    pointer-events: none;
+
+    &::before {
+      border: none;
+      background-color: @light-grey;
+    }
+
+    &::after {
+      background-color: @base-grey;
+    }
+  }
+}
+
+.filters-form__button {
+  margin: 30px auto 0 auto;
+
+  @media (min-width: @tablet-width) {
+    width: auto;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    margin-top: 0;
+    padding: 8px 39px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 39px;
+    width: 100%;
+  }
+}
