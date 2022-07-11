@@ -22,15 +22,14 @@ const mapMarker = L.marker(
     icon: mapPin,
   }
 );
-/*
-const mapImage = document.querySelector('.map__image');
+
+const mapImage = document.querySelector('.map__picture');
 const mapCanvas = document.querySelector('.map__canvas');
-*/
+
 const map = L.map('map-canvas');
-/*
-mapImage.classList.remove('map__image--nojs');
+
+mapImage.classList.remove('map__picture--nojs');
 mapCanvas.classList.remove('map__canvas--nojs');
-*/
 
 map.setView({
   lat: DRINK2GO.lat,

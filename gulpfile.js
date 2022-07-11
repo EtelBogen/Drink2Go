@@ -102,7 +102,6 @@ const copy = (done) => {
   done();
 }
 
-
 // Clean
 
 const clean = () => {
@@ -156,7 +155,6 @@ export const build = gulp.series(
 );
 
 // Default
-
 
 export default gulp.series(
   clean,
