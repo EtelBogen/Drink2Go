@@ -1,5 +1,6 @@
 .slide {
   text-align: center;
+  width: 100%;
   padding: 20px 20px 60px;
 
   &--1 {
@@ -64,7 +65,7 @@
   }
 }
 
-.slide__picture {
+.slide__image {
   display: block;
   height: 100%;
   width: 280px;
@@ -121,7 +122,17 @@
   }
 }
 
+.slide__subject {
+  @media (min-width: @desktop-width) {
+    text-align: left;
+    margin-bottom: 4px;
+  }
+}
+
 .slide__order {
+  display: flex;
+  max-width: 280px;
+  justify-content: center;
   margin: 0 auto;
 
   @media (min-width: @tablet-width) {
@@ -129,13 +140,31 @@
   }
 
   @media (min-width: @desktop-width) {
+    justify-content: flex-start;
     margin: 0;
   }
 }
 
-.slide__badge {
-  @media (min-width: @desktop-width) {
-    text-align: left;
-    margin-bottom: 4px;
+
+.slide__price {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto 0;
+  line-height: 32px;
+
+  &--old {
+    font-size: 16px;
+    color: @base-primary;
+    text-decoration: line-through;
+    margin-right: 6px;
   }
+
+  &--new {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.slide__button {
+  margin-left: 20px;
 }

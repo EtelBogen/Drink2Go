@@ -14,3 +14,18 @@
   display: grid;
   grid-template-rows: min-content 1fr min-content;
 }
+
+.page__wrapper {
+  min-width: @mobile-min-width;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @media (min-width: @tablet-width) {
+    padding: 0 20px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 1360px;
+    margin: 0 auto;
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "drink2go",
   "private": true,
-  "description": "проект для грейдирования Drink2Go от HTML Academy",
+  "description": "проект для грейдирования Drink2Go от HTML Academy",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.0.0",
     "autoprefixer": "10.4.0",
@@ -47,8 +47,5 @@
   "engines": {
     "node": "16.13.0"
   },
-  "type": "module",
-  "dependencies": {
-    "swiper": "^8.3.0"
-  }
+  "type": "module"
 }

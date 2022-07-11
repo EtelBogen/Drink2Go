@@ -19,21 +19,21 @@
   display: block;
   color: @base-black;
 
+  @media (min-width: @desktop-width) {
+    display: flex;
+
+    &:hover,
+    &:focus {
+      color: @base-primary;
+    }
+
+    &:active {
+      color: @base-primary;
+    }
+  }
+
   &:active {
     background-color: @base-secondary;
-
-    @media (min-width: @desktop-width) {
-      display: flex;
-
-      &:hover,
-      &:focus {
-        color: @base-primary;
-      }
-
-      &:active {
-        color: @base-primary;
-      }
-    }
   }
 }
 
