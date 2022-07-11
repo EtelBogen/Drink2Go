@@ -9,5 +9,61 @@
 }
 
 .sorting-form__title {
-  
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: auto 9px auto 0;
+
+  @media (min-width: @tablet-width) {
+    margin-right: 12px;
+  }
+}
+
+.sorting-form__wrapper {
+  position: relative;
+  width: 100%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    width: 10px;
+    height: 6px;
+    background-image: url("/img/svg/icon-sorting-down.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+  }
+
+  @media (min-width: @tablet-width) {
+    width: auto;
+  }
+}
+
+.sorting-form__select {
+  position: relative;
+  font-family: @font-family-main;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: @base-primary;
+  width: 100%;
+  padding: 4px 0 4px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: @lightest-grey;
+  cursor: pointer;
+  appearance: none;
+
+  &:hover,
+  &:focus {
+    border: none;
+    background-color: @base-secondary;
+  }
+
+  &:active {
+    border: none;
+    background-color: @lightest-grey;
+  }
 }
