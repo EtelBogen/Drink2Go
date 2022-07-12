@@ -2,10 +2,22 @@
   display: block;
 }
 
+.header-logo__href {
+  text-decoration: none;
+
+  @media (min-width: @desktop-width) {
+    display: flex;
+  }
+}
+
 .header-logo__image {
   display: block;
 }
 
 .header-logo__text {
   display: none;
+
+  @media (min-width: @desktop-width) {
+    display: block;
+  }
 }
