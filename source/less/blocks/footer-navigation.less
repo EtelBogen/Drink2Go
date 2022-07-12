@@ -1,0 +1,29 @@
+.footer-navigation__item {
+  margin-bottom: 4px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.footer-navigation__href {
+  display: inline-block;
+  padding: 8px 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: @base-black;
+  letter-spacing: 0.02rem;
+
+  &:hover,
+  &:focus {
+    color: @primary-lighter;
+  }
+
+  &:active {
+    color: @primary-darker;
+  }
+}
+
